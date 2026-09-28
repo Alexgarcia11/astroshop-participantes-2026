@@ -26,13 +26,22 @@ observas cómo el agente analiza mejor: más enfocado, más eficiente y más hon
 
 ## Paso 1 - token de Github
 * Crear Token de Github en la ruta [Link](https://github.com/settings/personal-access-tokens)
-* Developer settings → Personal access tokens → Fine-grained tokens
+* Ir a la seccion `Developer settings → Personal access tokens → Fine-grained tokens`
 * Generate new token
-* Repository access: All repositories
-* Permissions → Repository: Contents (Read/write) y Pull requests (Read/write)
+* Repository access: `All repositories`
+* Permissions → Repository: `Contents` (Read/write) y `Pull requests` (Read/write)
 * Generate token → copiar el token y guardarlo
 
-## Paso 2 - Crear el Codespace
+## Paso 2 - Habilitar el Flag de Fallos
+* Ir al repositorio [Repo con Copilot](https://github.com/leidyruizrr/astroshop-participantes-2026) 
+* Click en el directorio de `flags` 
+* Identificar su archivo con su ID de participante
+* Click en editar (Lapiz de lado derecho)
+* Cambiar `off` por `on`
+* Click en el boton verde de `Commit changes`
+* Dejarlo en `Commit directly to the main branch` y aceptar
+
+## Paso 3 - Crear el Codespace
 
 1. Entrar al link del repositorio [Repo con Copilot](https://github.com/leidyruizrr/astroshop-participantes-2026) 
 2. Haz clic en el botón verde **Code**.
@@ -41,7 +50,7 @@ observas cómo el agente analiza mejor: más enfocado, más eficiente y más hon
 5. Espera 2-3 minutos mientras GitHub prepara el entorno (se abrirá VS Code en el navegador).
 
 
-## Paso 3  - Iniciar el Workspace & Iniciar el MCP server
+## Paso 4  - Iniciar el Workspace & Iniciar el MCP server
 
 1. Ubicar el archivo  `.vscode/mcp.json` y agregar el Token de Github creado previamente
 2. Abrir la terminal y ejecutar el siguiente comando: esto creará el archivo de instrucciones base
@@ -66,6 +75,8 @@ cp lab1/LAB1-paso-0.md .github/copilot-instructions.md
 ---
 #
 
+## Laboratorio de Checkpoints - Instruction Files
+
 # Ejercico 1 - (Herramientas + Ambiente)
 
 `Prompt de Referencia`:
@@ -75,7 +86,7 @@ Analiza los problemas que ha tenido la aplicación astroshop en las últimas 2 h
 
 ---
 
-## Ejercico 2 — Método de análisis y las fuentes de datos
+## Ejercico 2 — Método de análisis, fuentes de datos & Tips de consulta
 
 * Reemplaza tu instruction file por el del paso 1:
 ```
@@ -89,24 +100,11 @@ cp lab1/LAB1-paso-1.md .github/copilot-instructions.md
 
 ---
 
-## Ejercico 3 — Tips y Reglas de eficiencia
+## Ejercico 3 — Reglas de Investigación, Rigor y Formato de salida
 
 * Reemplaza tu instruction file por el del paso 2:
 ```
 cp lab1/LAB1-paso-2.md .github/copilot-instructions.md
-```
-
-* Abre un chat nuevo, lanza el prompt de referencia.
-
-
----
-
-## Paso 4 — Rigor (anti-alucinación) y Formato de salida
-
-* Reemplaza tu instruction file por el del paso 3:
-
-```
-cp lab1/LAB1-paso-3.md .github/copilot-instructions.md
 ```
 
 * Abre un chat nuevo, lanza el prompt de referencia.
