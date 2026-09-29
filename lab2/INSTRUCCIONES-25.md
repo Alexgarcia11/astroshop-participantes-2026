@@ -20,7 +20,7 @@ Instrucciones para investigar, documentar y remediar incidentes en el namespace 
 ## El ambiente
 
 - Aplicación: astroshop, aplicacion de ecommerce con microservicios en Kubernetes monitoreada con Dynatrace en ambiente de Dynatrace dynatrace-lab.
-- Kubernetes en GCP (GKE), cluster `dt-lab-lcrr-demo`, namespace `astroshop-22`. No tienes acceso a `kubectl` ni al cluster k8s. La única vía para cambiar su estado es un Pull Request.
+- Kubernetes en GCP (GKE), cluster `dt-lab-lcrr-demo`, namespace `astroshop-25`. No tienes acceso a `kubectl` ni al cluster k8s. La única vía para cambiar su estado es un Pull Request.
 - La aplicación reporta a Dynatrace por dos caminos a la vez: OneAgent (automático) y OpenTelemetry Collector. Por eso un servicio puede aparecer como varias entidades, Siempre ancla tu análisis a la entidad del problema activo de Davis, dentro de tu namespace.
 
 ## Tips de consulta
