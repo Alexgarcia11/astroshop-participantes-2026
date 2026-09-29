@@ -2,4 +2,4 @@
 # Controla la inyección de fallos en el servicio de pagos.
 # Valores: "on" (activo) | "off" (inactivo)
 # Mitigación: desactivar la inyección de fallos en payment para estabilizar el servicio.
-paymentFailure: "off"
+paymentFailure: "on"
