@@ -17,6 +17,7 @@
   "postCreateCommand": "bash .devcontainer/setup.sh",
   "remoteEnv": {
     "PATH": "${containerEnv:PATH}:/home/vscode/.local/bin",
-    "DT_PLATFORM_TOKEN": "${localEnv:DT_PLATFORM_TOKEN}"
+    "DT_PLATFORM_TOKEN": "${localEnv:DT_PLATFORM_TOKEN}",
+    "DT_PLAYGROUND_TOKEN": "${localEnv:DT_PLAYGROUND_TOKEN}"
   }
 }

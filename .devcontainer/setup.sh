@@ -13,20 +13,34 @@ export PATH="$PATH:$HOME/.local/bin"
 echo "[2/4] Instalando el skill de dtctl para Copilot..."
 dtctl skills install --for copilot 2>/dev/null || echo "   (instala con: dtctl skills install --for copilot)"
 
-# --- 3. Configurar dtctl (apunta a tu tenant, para Labs 2 y 3) ---
+# --- 3. Configurar dtctl (dos contextos: lab y playground) ---
 echo "[3/4] Configurando dtctl..."
+echo "export DTCTL_TOKEN_STORAGE=file" >> ~/.bashrc
+export DTCTL_TOKEN_STORAGE=file
+
 if [ -n "$DT_PLATFORM_TOKEN" ]; then
-  echo "export DTCTL_TOKEN_STORAGE=file" >> ~/.bashrc
-  export DTCTL_TOKEN_STORAGE=file
   dtctl config set-credentials lab-token --token "$DT_PLATFORM_TOKEN" 2>/dev/null
   dtctl config set-context astroshop \
     --environment "https://ulk04354.sprint.apps.dynatracelabs.com" \
     --token-ref lab-token 2>/dev/null
-  dtctl config use-context astroshop 2>/dev/null
-  echo "   dtctl configurado (tenant del lab)."
+  echo "   contexto 'astroshop' (tenant del lab) configurado."
 else
   echo "   AVISO: no se encontro DT_PLATFORM_TOKEN."
 fi
+
+if [ -n "$DT_PLAYGROUND_TOKEN" ]; then
+  dtctl config set-credentials playground-token --token "$DT_PLAYGROUND_TOKEN" 2>/dev/null
+  dtctl config set-context playground \
+    --environment "https://wkf10640.apps.dynatrace.com" \
+    --token-ref playground-token 2>/dev/null
+  echo "   contexto 'playground' configurado."
+else
+  echo "   AVISO: no se encontro DT_PLAYGROUND_TOKEN."
+fi
+
+# Contexto activo por defecto: el del lab (Labs 2 y 3)
+dtctl config use-context astroshop 2>/dev/null
+echo "   contexto activo por defecto: astroshop."
 
 # --- 4. Crear .vscode/mcp.json con los dos tokens de Dynatrace inyectados ---
 echo "[4/4] Configurando los MCP de Dynatrace..."
