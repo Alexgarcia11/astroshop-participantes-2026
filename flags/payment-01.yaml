@@ -1,4 +1,4 @@
 # Feature flag: paymentFailure
 # Controla la inyección de fallos en el servicio de pagos.
 # Valores: "on" (activo) | "off" (inactivo)
-paymentFailure: "off"
+paymentFailure: "on"
